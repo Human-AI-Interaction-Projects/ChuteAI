@@ -12,5 +12,9 @@ ChuteAI helps the users and the users help ChuteAI. It's a powerful diagnostic t
 
 ChuteAI uses a battery-powered Adafruit Feather 32u4 Adalogger for data acquisition. This is connected to an MPU6050 IMU via I2C to collect gyroscope and accelerometer data, which is stored on a Micro-SD card. These are mounted on a breadboard and attached to a belt, which the user mounts to their midriff with the SD card pointed down. When the Adalogger is reset, the onboard LED will flash 3 times, indicating that data collection is starting. On the fourth flash the LED stays on, and 4 seconds of data is collected as the user falls and lands. The LED turns off when data acquisition is complete.
 
+![alt text][pic front] ![alt text][pic side]
+
+[pic front]: https://github.com/loicmaxwell17/ChuteAI/tree/master/Images/IMG_5147.jpg "Data Acquisition Device from Front"
+[pic side]: https://github.com/loicmaxwell17/ChuteAI/tree/master/Images/IMG_5148.jpg "Data Acquisition Device from Side"
 
 Once data is collected, the SD card is removed
