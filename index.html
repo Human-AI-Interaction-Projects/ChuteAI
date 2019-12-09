@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trainer UI</title>
+    <!-- Created on Nov 19 2019 by Weiting Ji -->
+    <link href="{{ url_for('static', filename='trainerUI.css')}}" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="{{ url_for('static', filename='jquery-3.4.1.js')}}"></script>
+</head>
+<body>
+    <div class="header">
+        <center><h1>Chute AI</h1></center>
+    </div>
+    <div class="body">
+        <div class="box left_box">
+            <div class="header2">
+                <center><h2>User Performance Feedback</h2></center>
+            </div>
+            <div class="waveform">
+                <center><img id="accel_y" src=""></center>
+                <center><img id="gyro_x" src=""></center>
+                <center><img id="gyro_z" src=""></center>
+            </div>
+            <table class="evaluation_table">
+                <tr>
+                    <th>Metrics</th>
+                    <th>Classification</th>
+                    <th>Comments</th>
+					<th>What the AI Saw</th>
+                </tr>
+                <tr>
+                    <td>Falling</td>
+                    <!-- put the AI output of falling score here -->
+                    <td id="falling_score"></td>
+                    <!-- put the AI output of falling comments here -->
+                    <td id="falling_comments"></td>
+					<td id="falling_AI_explanation"></td>
+                </tr>
+                <tr>
+                    <td>Landing</td>
+                    <!-- put the AI output of landing score here -->
+                    <td id="landing_score"></td>
+                    <!-- put the AI output of landing comments here -->
+                    <td id="landing_comments"></td>
+					<td id="landing_AI_explanation"></td>
+                </tr>  
+            </table>
+            <div class="box_key">
+                <center><button class="performance">Show Performance</button></center>
+            </div>
+        </div>
+        
+        <div class="box right_box">
+            <center><h2>AI Performance Feedback</h2></center>
+            <table class="evaluation_table">
+                <tr>
+                    <th>Metrics</th>
+                    <th>Classification</th>
+                </tr>
+                <tr>
+                    <td>Falling</td>
+                    <!-- put the AI input of falling score here -->
+                    <td><input type="text" class="falling_input"></td>
+                </tr>
+                <tr>
+                    <td>Landing</td>
+                    <!-- put the AI input of landing score here -->
+                    <td><input type="text" class="landing_input"></td>
+                </tr>  
+            </table>
+            <div class="box_key">
+                <center><button class="corrector">Reinforce/Correct AI</button></center>
+            </div>
+        </div>
+    </div>
+    <br>
+    
+    <div class="reader"> 
+        <center><input type="file" class="file_input"></center>
+    </div>
+
+    <script src="{{ url_for('static', filename='trainerUI.js')}}"></script>
+</body>
+</html>

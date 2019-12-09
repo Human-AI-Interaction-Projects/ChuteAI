@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trainer UI</title>
+    <link href="trainerUI.css" rel="stylesheet" type="text/css">
+    <script src="jquery-3.4.1.js"></script>
+</head>
+<body>
+    <div class="header">
+        <center><h1>Chute AI</h1></center>
+    </div>
+    <div class="body">
+        <div class="box left_box">
+            <div class="header2">
+                <center><h2>User Performance Feedback</h2></center>
+            </div>
+            <div class="waveform">
+                <center><img id="waveform" src=""></center>
+            </div>
+            <table class="evaluation_table">
+                <tr>
+                    <th>Metrics</th>
+                    <th>Classification</th>
+                    <th>Comments</th>
+                </tr>
+                <tr>
+                    <td>Falling</td>
+                    <!-- put the AI output of falling score here -->
+                    <td>falling_score</td>
+                    <!-- put the AI output of falling comments here -->
+                    <td>falling_comments</td>
+                </tr>
+                <tr>
+                    <td>Landing</td>
+                    <!-- put the AI output of landing score here -->
+                    <td>landing_score</td>
+                    <!-- put the AI output of landing comments here -->
+                    <td>landing_comments</td>
+                </tr>  
+            </table>
+            <div class="box_key">
+                <center><button class="performance">Show Performance</button></center>
+            </div>
+        </div>
+        
+        <div class="box right_box">
+            <center><h2>AI Performance Feedback</h2></center>
+            <table class="evaluation_table">
+                <tr>
+                    <th>Metrics</th>
+                    <th>Classification</th>
+                </tr>
+                <tr>
+                    <td>Falling</td>
+                    <!-- put the AI input of falling score here -->
+                    <td><input type="text" class="falling_input"></td>
+                </tr>
+                <tr>
+                    <td>Landing</td>
+                    <!-- put the AI input of landing score here -->
+                    <td><input type="text" class="landing_input"></td>
+                </tr>  
+            </table>
+            <div class="box_key">
+                <center><button class="corrector">Reinforce/Correct AI</button></center>
+            </div>
+        </div>
+    </div>
+    <br>
+    
+    <div class="reader"> 
+        <center><input type="file" class="file_input"></center>
+        <center><button class="submit">Submit</button></center>
+    </div>
+
+    <script src="trainerUI.js"></script>
+</body>
+</html>
