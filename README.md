@@ -15,4 +15,15 @@ ChuteAI uses a battery-powered Adafruit Feather 32u4 Adalogger for data acquisit
 <img src="https://github.com/loicmaxwell17/ChuteAI/blob/master/Images/IMG_5147.JPG" width="300"/>
 <img src="https://github.com/loicmaxwell17/ChuteAI/blob/master/Images/IMG_5148.JPG" width="300"/>
 
-Once data is collected, the SD card is removed
+Once data is collected, the SD card is removed. The data stored in the .csv file in the SD card will be transferred to a local directory in a PC for analysis.
+
+### Data Analysis
+
+The backend server is written using Flask framework. The user can open the flask_interface.py by typing in "set FLASK_APP=flask_interface.py" and "flask run" to initialize it. Then in a web browser navigate to localhost:5000 to open the frontend UI. The UI looks like this.
+
+
+On the left handside is the User Performance UI which demonstrate how the user performs in a particular fall; on the right handside is the AI retrain UI from which ChuteAI gets new corrected data and get itself retrained. The user can click the button at the center bottom to select the directory of the .csv data file. And on the User Performance interface click the "Show Performance" button, and waveform and the comments regarding the performance of the falling will appear. The waveform consists of acceleration in y-direction and gyroscope reading in x and z-direction and the user can switch between them by clicking on the waveform graph. The grading system is defined as the following:
+    
+    Falling - left, right, center (center being good, left and right are bad)
+    Landing - good, bad, N/A (N/A when the fall was bad)
+
