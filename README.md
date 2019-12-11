@@ -30,8 +30,8 @@ to initialize it. Then in a web browser navigate to localhost:5000 to open the f
 
 On the left handside is the User Performance UI which demonstrate how the user performs in a particular fall; on the right handside is the AI retrain UI from which ChuteAI gets new corrected data and get itself retrained. The user can click the button at the center bottom to select the directory of the .csv data file. And on the User Performance interface click the "Show Performance" button, and waveform and the comments regarding the performance of the falling will appear. The waveform consists of acceleration in y-direction and gyroscope reading in x and z-direction and the user can switch between them by clicking on the waveform graph. The grading system is defined as the following:
     
-   Falling - left, right, center (center being good, left and right are bad)
-   Landing - good, bad, N/A (N/A when the fall was bad)
+* Falling - left, right, center (center being good, left and right are bad)
+* Landing - good, bad, N/A (N/A when the fall was bad)
    
 Despite the grading, the user will also receive feedback from ChuteAI including the suggestion to the next fall and how ChuteAI interpret the waveform graph (i.e. what kind of waveform does ChuteAI see as a good fall/land). If the user thinks that his performance is different than what ChuteAI has interperted, he can easily make changes to retrain ChuteAI by typing in the grading classification he thinks is correct on the right UI and click the "Retrain" button. Once the retrain process is successful, a "retrain successful" message will pop up and the user can use the retrained AI for further analysis. Usually, this retrain process is done by a professional climber, and amateur users only need the User Performance UI on the left side.
 
