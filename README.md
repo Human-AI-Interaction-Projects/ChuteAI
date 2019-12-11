@@ -14,9 +14,11 @@ ChuteAI uses a battery-powered Adafruit Feather 32u4 Adalogger for data acquisit
 
 <img src="https://github.com/loicmaxwell17/ChuteAI/blob/master/IMG_5147.jpg" width="300"/>
 Front View
+<br/>
 
 <img src="https://github.com/loicmaxwell17/ChuteAI/blob/master/IMG_5148.jpg" width="300"/>
 Side View
+<br/>
 
 Once data is collected, the Micro-SD card is removed. The data stored in the .csv file in the SD card will be transferred to the Data Folder directory on a PC for analysis.
 
