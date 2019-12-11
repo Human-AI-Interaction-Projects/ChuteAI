@@ -40,6 +40,7 @@ Despite the grading, the user will also receive feedback from ChuteAI including 
 * Python 3.6 - language for backend server
 * Flask - framework for backend server
 * Tensorflow - model for the AI
+* Keras, scikit-learn, matplotlib, pandas - library for deep learning, data collection, graphing
 * HTML5, CSS3, JavaScript - language for frontend UI
 * Jquery - library for frontend UI
 * Pycharm - project management
