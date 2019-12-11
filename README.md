@@ -46,6 +46,7 @@ If the user thinks that their performance is different than what ChuteAI has int
 
 <img src="https://github.com/loicmaxwell17/ChuteAI/blob/master/retrain_AI.png" width="1000"/>
 
+demo_video.mov is a video of the end-to-end system in action. Check it out!
 
 ### Built With
 
