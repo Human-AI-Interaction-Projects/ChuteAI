@@ -12,10 +12,13 @@ ChuteAI helps the users and the users help ChuteAI. It's a powerful diagnostic t
 
 ChuteAI uses a battery-powered Adafruit Feather 32u4 Adalogger for data acquisition. This is connected to an MPU6050 IMU via I2C to collect gyroscope and accelerometer data, which is stored on a Micro-SD card. These are mounted on a breadboard and attached to a belt, which the user mounts to their midriff with the SD card pointed down. When the Adalogger is reset, the onboard LED will flash 3 times, indicating that data collection is starting. On the fourth flash the LED stays on, and 4 seconds of data is collected as the user falls and lands. The LED turns off when data acquisition is complete.
 
-<img src="https://github.com/loicmaxwell17/ChuteAI/blob/master/Images/IMG_5147.JPG" width="300"/>
-<img src="https://github.com/loicmaxwell17/ChuteAI/blob/master/Images/IMG_5148.JPG" width="300"/>
+<img src="https://github.com/loicmaxwell17/ChuteAI/blob/master/IMG_5147.JPG" width="300"/>
+Front View
 
-Once data is collected, the SD card is removed. The data stored in the .csv file in the SD card will be transferred to a local directory in a PC for analysis.
+<img src="https://github.com/loicmaxwell17/ChuteAI/blob/master/IMG_5148.JPG" width="300"/>
+Side View
+
+Once data is collected, the Micro-SD card is removed. The data stored in the .csv file in the SD card will be transferred to the Data Folder directory on a PC for analysis.
 
 ### Data Analysis
 
@@ -24,16 +27,23 @@ The backend server is written using Flask framework. The user can open the flask
     set FLASK_APP=flask_interface.py
     flask run
 
-to initialize it. Then in a web browser navigate to localhost:5000 to open the frontend UI. The UI looks like this.
+to initialize it. Then in a web browser navigate to localhost:5000 to open the frontend UI. The base UI looks like this.
 
-<img src="https://github.com/loicmaxwell17/ChuteAI/blob/master/Images/IMG_5149.PNG" width="1000"/>
+<img src="https://github.com/loicmaxwell17/ChuteAI/blob/master/ui_no_data.PNG" width="1000"/>
 
-On the left handside is the User Performance UI which demonstrate how the user performs in a particular fall; on the right handside is the AI retrain UI from which ChuteAI gets new corrected data and get itself retrained. The user can click the button at the center bottom to select the directory of the .csv data file. And on the User Performance interface click the "Show Performance" button, and waveform and the comments regarding the performance of the falling will appear. The waveform consists of acceleration in y-direction and gyroscope reading in x and z-direction and the user can switch between them by clicking on the waveform graph. The grading system is defined as the following:
+On the lefthand side is the User Performance UI which demonstrates how the user performs in a particular fall; on the righthand side is the AI Feedback UI from which ChuteAI gets new corrected data and gets itself retrained. The user can click the button at the bottom to select the appropriate .csv file from the Data Folder. On the User Performance interface they then click the "Show Performance" button to start processing the data. The waveforms and comments regarding the performance of the chute will appear. The waveform consists of acceleration in y-direction and gyroscope readings in x and z-direction and the user can switch between them by clicking on the waveform graph. The grading system is defined as the following:
     
 * Falling - left, right, center (center being good, left and right are bad)
 * Landing - good, bad, N/A (N/A when the fall was bad)
    
-Despite the grading, the user will also receive feedback from ChuteAI including the suggestion to the next fall and how ChuteAI interpret the waveform graph (i.e. what kind of waveform does ChuteAI see as a good fall/land). If the user thinks that his performance is different than what ChuteAI has interperted, he can easily make changes to retrain ChuteAI by typing in the grading classification he thinks is correct on the right UI and click the "Retrain" button. Once the retrain process is successful, a "retrain successful" message will pop up and the user can use the retrained AI for further analysis. Usually, this retrain process is done by a professional climber, and amateur users only need the User Performance UI on the left side.
+The grading is accompanied by feedback from ChuteAI which includes the suggestion to the next fall and how ChuteAI interprets the waveform graph (i.e. what kind of waveform does ChuteAI see as a good fall/land). Below is an example result using the data from Data Folder/test_file.csv:
+
+<img src="https://github.com/loicmaxwell17/ChuteAI/blob/master/ui_with_data.PNG" width="1000"/>
+
+If the user thinks that their performance is different than what ChuteAI has interperted, they can easily make changes to retrain ChuteAI by typing in the grading classification they think is correct.They can then click the "Reinforce/Correct AI" button to retrain the AI with their data and selected labels, which will rebuild the AI classifiers. Once the retrain process is successful, a "retrain successful" message will pop up and the user can use the retrained AI for further analysis. This same process can also be done if the user is satisfied with the classification, and instead of inputing new output lables they can just reinforce the AI with the same labels that were just calculated using the original classifiers. Usually, this retrain process is done by a professional climber, and amateur users only need the User Performance UI on the left side. Below is an example of what this would look like:
+
+<img src="https://github.com/loicmaxwell17/ChuteAI/blob/master/retrain_AI.PNG" width="1000"/>
+
 
 ### Built With
 
@@ -44,8 +54,9 @@ Despite the grading, the user will also receive feedback from ChuteAI including 
 * HTML5, CSS3, JavaScript - language for frontend UI
 * Jquery - library for frontend UI
 * Pycharm - project management
+* Arduino IDE - Data acquisition script development
 
 ### Authors
 
 * Loic Maxwell - AI building, training, and data collection
-* Weiting Ji - frontend UI designing and building
+* Weiting Ji - Frontend UI designing and building
