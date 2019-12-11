@@ -36,14 +36,14 @@ Despite the grading, the user will also receive feedback from ChuteAI including 
 
 ### Built With
 
-* [Python 3.6] - language for backend server
-* [Flask] - framework for backend server
-Tensorflow-model for the AI
-HTML5, CSS3, JavaScript-language for frontend UI
-Jquery-library for frontend UI
-Pycharm-project management
+* Python 3.6 - language for backend server
+* Flask - framework for backend server
+* Tensorflow - model for the AI
+* HTML5, CSS3, JavaScript - language for frontend UI
+* Jquery - library for frontend UI
+* Pycharm - project management
 
 ### Authors
 
-Loic Maxwell-AI building, training, and data collection
-Weiting Ji-frontend UI designing and building
+* Loic Maxwell - AI building, training, and data collection
+* Weiting Ji - frontend UI designing and building
